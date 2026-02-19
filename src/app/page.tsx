@@ -155,7 +155,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/hero_tubes.png"
+            src="/many_tubes.jpeg"
             alt="Коллекция поликарбонатных труб"
             fill
             className="object-cover object-center"
@@ -170,14 +170,15 @@ export default function Home() {
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
           <div className="max-w-2xl">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold font-['Montserrat'] text-gray-900 leading-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold font-['Montserrat'] text-gray-900 leading-tight mb-4">
               Поликарбонатные трубы для{' '}
               <span className="bg-gradient-to-r from-[#0099FF] to-[#FF6600] bg-clip-text text-transparent">дома, хобби и творчества</span>
             </h1>
+            <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 mb-6 leading-relaxed">
+              Создайте свой светильник, аквариум или стильную упаковку своими руками
+            </p>
             <p className="text-lg sm:text-xl text-gray-700 mb-8 leading-relaxed">
-              Создайте свой светильник, аквариум или стильную упаковку своими руками. 
-              Поликарбонатные трубы сочетают <strong>прозрачность стекла</strong> и <strong>прочность пластика</strong> — 
-              легко, красиво и прочно.
+              Легко, красиво и прочно.
             </p>
             
             {/* Stock info card */}
@@ -206,52 +207,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Advantages Section */}
-      <section id="products" className="py-16 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-['Montserrat'] text-gray-900 mb-4">
-              Преимущества поликарбоната
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Поликарбонатные трубы. Не ржавеет. Не бьётся. Работает.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { title: "Прочность", desc: "Ударопрочность в 250 раз выше, чем у стекла", icon: Shield },
-              { title: "Лёгкость", desc: "В 3 раза легче акрила и в 6 раз легче стекла", icon: Feather },
-              { title: "Оптика", desc: "Светопропускаемость до 90% для прозрачных труб", icon: Sparkles },
-              { title: "Гибкость", desc: "Легко режутся, гнутся, склеиваются, сверлятся", icon: Wrench },
-              { title: "Термостойкость", desc: "Диапазон от -40°C до +120°C", icon: Thermometer },
-              { title: "Долговечность", desc: "Не желтеют и не мутнеют с годами (УФ защита)", icon: Infinity },
-              { title: "Экологичность", desc: "Отсутствие токсичных выделений", icon: Leaf },
-              { title: "Химстойкость", desc: "Стойкость к щелочам, кислотам, растворителям", icon: FlaskConical },
-            ].map((item, i) => {
-              const IconComponent = item.icon
-              const isBlue = i % 4 === 0 || i % 4 === 2
-              const color = isBlue ? '#0099FF' : '#FF6600'
-              return (
-                <div key={i} className="bg-gradient-to-br from-white to-gray-50 rounded-xl p-6 shadow-card hover:shadow-lg transition-shadow border border-gray-100">
-                  <div 
-                    className="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
-                    style={{ backgroundColor: `${color}15` }}
-                  >
-                    <IconComponent 
-                      className="w-5 h-5" 
-                      style={{ color: color }}
-                    />
-                  </div>
-                  <h3 className="font-semibold text-gray-900 mb-2 font-['Montserrat']">{item.title}</h3>
-                  <p className="text-sm text-gray-600">{item.desc}</p>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* Color Comparison Section */}
       <section className="py-16 sm:py-24 gradient-opal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -266,7 +221,7 @@ export default function Home() {
               />
             </div>
             <div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-['Montserrat'] text-gray-900 mb-6">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold font-['Montserrat'] text-gray-900 mb-6">
                 Прозрачность стекла и прочность пластика
               </h2>
               
@@ -309,7 +264,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-['Montserrat'] text-gray-900 mb-6">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold font-['Montserrat'] text-gray-900 mb-6">
                 Крышки-заглушки в наличии
               </h2>
               <p className="text-lg text-gray-600 mb-6">
@@ -348,11 +303,57 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Advantages Section */}
+      <section id="products" className="py-16 sm:py-24 gradient-opal">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold font-['Montserrat'] text-gray-900 mb-4">
+              8 преимуществ поликарбоната
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Поликарбонатные трубы. Не ржавеет. Не бьётся. Работает.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { title: "Прочность", desc: "Ударопрочность в 250 раз выше, чем у стекла", icon: Shield },
+              { title: "Лёгкость", desc: "В 3 раза легче акрила и в 6 раз легче стекла", icon: Feather },
+              { title: "Оптика", desc: "Светопропускаемость до 90% для прозрачных труб", icon: Sparkles },
+              { title: "Гибкость", desc: "Легко режутся, гнутся, склеиваются, сверлятся", icon: Wrench },
+              { title: "Термостойкость", desc: "Диапазон от -40°C до +120°C", icon: Thermometer },
+              { title: "Долговечность", desc: "Не желтеют и не мутнеют с годами (УФ защита)", icon: Infinity },
+              { title: "Экологичность", desc: "Отсутствие токсичных выделений", icon: Leaf },
+              { title: "Химстойкость", desc: "Стойкость к щелочам, кислотам, растворителям", icon: FlaskConical },
+            ].map((item, i) => {
+              const IconComponent = item.icon
+              const isBlue = i % 4 === 0 || i % 4 === 2
+              const color = isBlue ? '#0099FF' : '#FF6600'
+              return (
+                <div key={i} className="bg-gradient-to-br from-white to-gray-50 rounded-xl p-6 shadow-card hover:shadow-lg transition-shadow border border-gray-100">
+                  <div
+                    className="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
+                    style={{ backgroundColor: `${color}15` }}
+                  >
+                    <IconComponent
+                      className="w-5 h-5"
+                      style={{ color: color }}
+                    />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-2 font-['Montserrat']">{item.title}</h3>
+                  <p className="text-sm text-gray-600">{item.desc}</p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Chemical Resistance Table */}
-      <section className="py-16 sm:py-24 gradient-opal">
+      <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-['Montserrat'] text-gray-900 mb-4">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold font-['Montserrat'] text-gray-900 mb-4">
               Химическая стойкость поликарбоната
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -396,7 +397,7 @@ export default function Home() {
       <section id="applications" className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-['Montserrat'] text-gray-900 mb-4">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold font-['Montserrat'] text-gray-900 mb-4">
               Области применения
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -422,25 +423,25 @@ export default function Home() {
                 icon: <GiftIcon />,
                 title: "Подарочная упаковка",
                 desc: "Создавайте оригинальные кейсы и тубусы для подарков. Прозрачные трубы позволяют увидеть содержимое, белые — добавляют загадочности.",
-                image: "/hero_tubes.png"
+                image: "/pack.jpeg"
               },
               {
                 icon: <HomeIcon />,
                 title: "Интерьерный дизайн",
                 desc: "Изготовление стоек, колонн, перил, каркасов для мебели, перегородок с подсветкой. Лёгкость обработки позволяет воплощать любые идеи.",
-                image: "/hero_tubes.png"
+                image: "/partitions.jpeg"
               },
               {
                 icon: <GaugeIcon />,
                 title: "Контроль уровня жидкости",
                 desc: "Прозрачные трубы отлично подходят для визуального контроля уровня жидкости в ёмкостях, бочках и резервуарах.",
-                image: "/hero_tubes.png"
+                image: "/level.jpeg"
               },
               {
                 icon: <GiftIcon />,
                 title: "Декоративные поделки",
                 desc: "Моделирование, хобби, рукоделие — поликарбонатные трубы станут отличным материалом для творческих проектов любой сложности.",
-                image: "/hero_tubes.png"
+                image: "/dig_crafts.png"
               },
             ].map((item, i) => (
               <div key={i} className="group bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden shadow-card hover:shadow-xl transition-all border border-gray-100">
@@ -470,7 +471,7 @@ export default function Home() {
       <section id="faq" className="py-16 sm:py-24 gradient-opal">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-['Montserrat'] text-gray-900 mb-4">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold font-['Montserrat'] text-gray-900 mb-4">
               Часто задаваемые вопросы
             </h2>
           </div>
@@ -537,7 +538,7 @@ export default function Home() {
       <section id="contacts" className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-['Montserrat'] text-gray-900 mb-4">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold font-['Montserrat'] text-gray-900 mb-4">
               Свяжитесь с нами
             </h2>
             <p className="text-lg text-gray-600">
@@ -626,8 +627,8 @@ export default function Home() {
                     </div>
                     <div>
                       <p className="text-sm text-gray-500">Телефон</p>
-                      <a href="tel:+79001234567" className="text-lg font-medium text-gray-900 hover:text-[#0099FF]">
-                        +7 (900) 123-45-67
+                      <a href="tel:+79311197378" className="text-lg font-medium text-gray-900 hover:text-[#0099FF]">
+                        +7 (931) 119-73-78
                       </a>
                     </div>
                   </div>
@@ -654,7 +655,7 @@ export default function Home() {
                 
                 <div className="flex flex-wrap gap-4">
                   <a 
-                    href="https://ozon.ru" 
+                    href="https://www.ozon.ru/seller/profileon/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 bg-white px-4 py-3 rounded-xl border border-gray-200 hover:border-[#0099FF] hover:shadow-md transition-all"
@@ -662,20 +663,12 @@ export default function Home() {
                     <span className="font-semibold text-gray-900">OZON</span>
                   </a>
                   <a 
-                    href="https://wildberries.ru" 
+                    href="https://www.wildberries.ru/seller/250072565" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 bg-white px-4 py-3 rounded-xl border border-gray-200 hover:border-[#0099FF] hover:shadow-md transition-all"
                   >
                     <span className="font-semibold text-gray-900">Wildberries</span>
-                  </a>
-                  <a 
-                    href="https://market.yandex.ru" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 bg-white px-4 py-3 rounded-xl border border-gray-200 hover:border-[#0099FF] hover:shadow-md transition-all"
-                  >
-                    <span className="font-semibold text-gray-900">Яндекс Маркет</span>
                   </a>
                 </div>
               </div>
@@ -704,7 +697,7 @@ export default function Home() {
             
             <div className="text-center md:text-right">
               <p className="text-gray-400 text-sm">
-                © 2024 Профилеон. Все права защищены.
+                © 2026 Профилеон. Все права защищены.
               </p>
               <p className="text-gray-500 text-xs mt-1">
                 Российское производство

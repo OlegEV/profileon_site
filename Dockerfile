@@ -1,4 +1,4 @@
-# Use Bun as the base image
+# Use Bun as the base image for building
 FROM oven/bun:1 AS base
 
 # Install dependencies only when needed
@@ -10,7 +10,7 @@ COPY package.json bun.lock* ./
 COPY prisma ./prisma/
 
 # Install dependencies
-RUN bun install --frozen-lockfile
+RUN bun install
 
 # Generate Prisma client
 RUN bunx prisma generate
@@ -30,16 +30,16 @@ ENV DATABASE_URL="file:./dev.db"
 # Build the application
 RUN bun run build
 
-# Production image, copy all the files and run next
-FROM base AS runner
+# Production image - use Alpine Linux
+FROM oven/bun:alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
-# Create non-root user for security (Debian-based image)
-RUN groupadd -g 1001 nodejs
-RUN useradd -u 1001 -g nodejs -s /bin/bash -m nextjs
+# Create non-root user for security (Alpine-based image)
+RUN addgroup -g 1001 nodejs
+RUN adduser -S -u 1001 -G nodejs nextjs
 
 # Copy the standalone output
 COPY --from=builder /app/.next/standalone ./

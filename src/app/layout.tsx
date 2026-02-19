@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     url: "https://profileon.ru",
     siteName: "Профилеон",
     type: "website",
-    images: ["/hero_tubes.png"],
+    images: ["/many_tubes.jpeg"],
   },
 };
 
