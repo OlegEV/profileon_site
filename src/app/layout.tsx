@@ -41,12 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" suppressHydrationWarning>
-      <body
-        className={`${montserrat.variable} ${roboto.variable} antialiased bg-background text-foreground`}
-      >
-        {children}
-        <Toaster />
-
+      <head>
         {/* Yandex.Metrika counter */}
         <Script id="yandex-metrika" strategy="afterInteractive">
           {`
@@ -79,6 +74,12 @@ export default function RootLayout({
           </div>
         </noscript>
         {/* /Yandex.Metrika counter */}
+      </head>
+      <body
+        className={`${montserrat.variable} ${roboto.variable} antialiased bg-background text-foreground`}
+      >
+        {children}
+        <Toaster />
       </body>
     </html>
   );
