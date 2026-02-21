@@ -123,11 +123,12 @@ export default function Home() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 sm:h-20">
-            <div className="flex items-center gap-3">
-              <Image 
-                src="/logo.png" 
-                alt="Профилеон" 
-                width={48} 
+            {/* Logo — left */}
+            <div className="flex items-center gap-3 shrink-0">
+              <Image
+                src="/logo.png"
+                alt="Профилеон"
+                width={48}
                 height={48}
                 className="w-10 h-10 sm:w-12 sm:h-12"
               />
@@ -135,17 +136,37 @@ export default function Home() {
                 Профилеон
               </span>
             </div>
-            <nav className="hidden md:flex items-center gap-8">
+
+            {/* Phone + Email — center (desktop only) */}
+            <div className="hidden md:flex flex-col items-center gap-1">
+              <a href="tel:+79311197378" className="flex items-center gap-2 text-gray-700 hover:text-[#0099FF] transition-colors">
+                <PhoneIcon />
+                <span className="font-medium">+7 (931) 119-73-78</span>
+              </a>
+              <a href="mailto:info@profileon.ru" className="flex items-center gap-2 text-gray-700 hover:text-[#0099FF] transition-colors">
+                <MailIcon />
+                <span className="font-medium">info@profileon.ru</span>
+              </a>
+            </div>
+
+            {/* Nav — right (desktop only) */}
+            <nav className="hidden md:flex items-center gap-8 justify-end">
               <a href="#products" className="text-gray-600 hover:text-[#0099FF] transition-colors font-medium">Продукция</a>
               <a href="#applications" className="text-gray-600 hover:text-[#0099FF] transition-colors font-medium">Применение</a>
               <a href="#faq" className="text-gray-600 hover:text-[#0099FF] transition-colors font-medium">FAQ</a>
-              <a href="#contacts" className="text-gray-600 hover:text-[#0099FF] transition-colors font-medium">Контакты</a>
             </nav>
-            <a href="#contacts" className="md:hidden">
-              <Button className="bg-[#0099FF] hover:bg-[#0080DD] text-white">
-                Связаться
-              </Button>
-            </a>
+
+            {/* Phone + Email — mobile (replaces "Связаться" button) */}
+            <div className="md:hidden flex flex-col items-end gap-0.6">
+              <a href="tel:+79311197378" className="flex items-center gap-1.5 text-gray-700 hover:text-[#0099FF] transition-colors text-xs">
+                <PhoneIcon />
+                <span className="font-medium">+7 (931) 119-73-78</span>
+              </a>
+              <a href="mailto:info@profileon.ru" className="flex items-center gap-1.5 text-gray-700 hover:text-[#0099FF] transition-colors text-xs">
+                <MailIcon />
+                <span className="font-medium">info@profileon.ru</span>
+              </a>
+            </div>
           </div>
         </div>
       </header>
@@ -181,10 +202,10 @@ export default function Home() {
               Легко, красиво и прочно.
             </p>
             
-            {/* Stock info card */}
+            {/* Stock info + Buy card */}
             <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-glass border border-white/60">
               <h3 className="font-semibold text-gray-900 mb-4 font-['Montserrat']">В наличии на складе</h3>
-              <div className="grid sm:grid-cols-2 gap-4 text-sm">
+              <div className="grid sm:grid-cols-2 gap-4 text-sm mb-6">
                 <div className="flex items-start gap-2">
                   <CheckIcon />
                   <span><strong>Диаметры:</strong> от 8мм до 284мм</span>
@@ -201,6 +222,32 @@ export default function Home() {
                   <CheckIcon />
                   <span><strong>Производство:</strong> Россия</span>
                 </div>
+              </div>
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <a
+                  href="https://www.ozon.ru/seller/profileon/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 bg-white px-5 py-3 rounded-xl border border-gray-200 hover:border-[#005BFF] hover:shadow-lg transition-all group"
+                >
+                  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="#005BFF"/>
+                    <path d="M7 10h10v4H7z" fill="white"/>
+                  </svg>
+                  <span className="font-semibold text-gray-900 group-hover:text-[#005BFF] transition-colors">OZON</span>
+                </a>
+                <a
+                  href="https://www.wildberries.ru/seller/250072565"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 bg-white px-5 py-3 rounded-xl border border-gray-200 hover:border-[#7A0180] hover:shadow-lg transition-all group"
+                >
+                  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="#7A0180"/>
+                    <text x="12" y="16" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold">WB</text>
+                  </svg>
+                  <span className="font-semibold text-gray-900 group-hover:text-[#7A0180] transition-colors">Wildberries</span>
+                </a>
               </div>
             </div>
           </div>
@@ -647,31 +694,6 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 shadow-card border border-gray-100">
-                <h3 className="text-xl font-semibold text-gray-900 mb-6 font-['Montserrat']">Где приобрести</h3>
-                <p className="text-gray-600 mb-6">
-                  Нашу продукцию можно приобрести на ведущих маркетплейсах:
-                </p>
-                
-                <div className="flex flex-wrap gap-4">
-                  <a 
-                    href="https://www.ozon.ru/seller/profileon/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 bg-white px-4 py-3 rounded-xl border border-gray-200 hover:border-[#0099FF] hover:shadow-md transition-all"
-                  >
-                    <span className="font-semibold text-gray-900">OZON</span>
-                  </a>
-                  <a 
-                    href="https://www.wildberries.ru/seller/250072565" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 bg-white px-4 py-3 rounded-xl border border-gray-200 hover:border-[#0099FF] hover:shadow-md transition-all"
-                  >
-                    <span className="font-semibold text-gray-900">Wildberries</span>
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
         </div>
